@@ -1,9 +1,12 @@
 import ReactDOM from "react-dom";
 import './Modal.css';
 
-function Modal({  children  }) {
+function Modal({  children,activate  }) {
+
+    const status = activate ? 'activate' : 'deactivate';
+
     return ReactDOM.createPortal(
-        <div className="Modal">
+        <div className={`Modal ${status}`}>
             { children }
         </div>,
         document.getElementById('modal')
@@ -11,4 +14,4 @@ function Modal({  children  }) {
 }
 
 
-export {Modal};
+export { Modal };

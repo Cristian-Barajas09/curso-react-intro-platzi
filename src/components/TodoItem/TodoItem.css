@@ -3,9 +3,10 @@
     justify-content: space-between;
     margin: 15px;
     box-shadow: 2px 2px 2px rgb(210, 210, 210);
-    padding: 10px;
+    padding: 10px 0;
     cursor: pointer;
     transition: all .5s;
+    max-width: 500px;
 }
 
 .todo-item:hover {
@@ -19,6 +20,7 @@
 .icon-svg {
     width: 24px;
     height: 24px;
+    margin: 0 10px;
 }
 
 .todo-delete:hover {

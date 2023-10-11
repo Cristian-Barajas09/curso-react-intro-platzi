@@ -9,7 +9,7 @@ import { TodosError } from '../TodosError';
 import { TodoContext } from '../TodoContext';
 import { useContext } from 'react';
 import { Modal } from '../Modal';
-
+import { TodoForm } from '../TodoForm';
 
 function AppUI() {
     const {
@@ -50,13 +50,12 @@ function AppUI() {
                 </TodoList>
 
 
-            <CreateTodoButton onView={()=> setOpenModal(!openModal) } />
+            <CreateTodoButton setOpenModal={setOpenModal} />
 
             {
                 openModal && (
-                    <Modal>
-                        <button onClick={()=> setOpenModal(!openModal)}>x</button>
-                        la funcionalidad de agregar TODO
+                    <Modal activate={openModal}>
+                        <TodoForm/>
                     </Modal>
                 )
             }

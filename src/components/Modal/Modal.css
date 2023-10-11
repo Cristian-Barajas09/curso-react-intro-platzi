@@ -3,9 +3,29 @@
     height: 100%;
     box-shadow: 2px 2px 2px 5px rgb(210, 210, 210);
     background-color: white;
-    z-index: 10;
+    z-index: 2;
     position: fixed;
     top: 0;
-    left: 10%;
+    right: 0;
     text-align: center;
 }
+
+.deactivate {
+    animation: move .1s reverse;
+}
+
+.activate {
+    animation: move .1s normal;
+
+}
+
+
+@keyframes move {
+    0% {
+        right: -10%;
+    }
+    100% {
+        right: 0;
+    }
+}
+

@@ -11,7 +11,7 @@ function TodoProvider({ children }){
 
     const {item:todos,saveItem:saveTodos,loading,error} = useLocalStorage('todos_v1',[]);
     const [searchValue,setSearchValue] = useState(''); // lo ideal seria que el padre maneje el estado
-    const [openModal,setOpenModal] = useState(true);
+    const [openModal,setOpenModal] = useState(false);
 
     //esto de abajo se le conoce como estado heredado
     const completedTodos = todos.filter((todo)=> todo.completed).length; // !! -> no sabia que esta cosa existia
@@ -20,7 +20,6 @@ function TodoProvider({ children }){
   const searchedTodos = todos.filter((todo)=> {
     const todoText = todo.text.toLowerCase()
     const searchText = searchValue.toLowerCase()
-
     return todoText.includes(searchText)
   })
 
@@ -62,6 +61,14 @@ function TodoProvider({ children }){
     saveTodos(newTodos);
   }
 
+  const addTodo = (text)=> {
+    const newTodos = [...todos];
+
+    newTodos.push({text,completed:false});
+
+    saveTodos(newTodos);
+  }
+
     return (
         <TodoContext.Provider 
         value={{
@@ -74,7 +81,8 @@ function TodoProvider({ children }){
             loading,
             error,
             openModal,
-            setOpenModal
+            setOpenModal,
+            addTodo
         }}>
             { children }
         </TodoContext.Provider>
