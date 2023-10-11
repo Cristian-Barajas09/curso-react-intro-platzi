@@ -1,0 +1,10 @@
+.todo-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.todo-search input {
+    padding: 5px;
+    outline: none;
+}

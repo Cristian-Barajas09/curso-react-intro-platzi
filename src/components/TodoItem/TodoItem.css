@@ -1,0 +1,30 @@
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    box-shadow: 2px 2px 2px rgb(210, 210, 210);
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.todo-item:hover {
+    box-shadow: none;
+}
+
+.text-completed {
+    text-decoration: line-through;
+}
+
+.icon-svg {
+    width: 24px;
+    height: 24px;
+}
+
+.todo-delete:hover {
+    color: red;
+}
+
+.todo-completed:hover {
+    fill: green;
+}
